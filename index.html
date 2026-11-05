@@ -37,6 +37,11 @@
     var target = BASE;
     if (p && MAP[p]) target += '#/' + MAP[p];
     document.getElementById('app').src = target;
+  window.addEventListener('message', function (e) {
+  if (!e.data || e.data.type !== 'rute') return;
+  var path = e.data.path ? '/RT/' + e.data.path : '/RT/';
+  if (location.pathname !== path) history.pushState(null, '', path);
+});
   </script>
 </body>
 </html>
