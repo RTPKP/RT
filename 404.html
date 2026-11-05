@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    var seg = location.pathname.replace(/^\/RT\/?/, '').replace(/\/$/, '');
+    location.replace('/RT/?p=' + encodeURIComponent(seg) + location.hash);
+  </script>
+</head>
+<body></body>
+</html>
